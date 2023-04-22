@@ -28,3 +28,6 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 
 Route::get('/muro',[PostController::class,'index']) ->name('posts.index');
+
+
+/// hola mundo 
