@@ -22,5 +22,10 @@ class PostController extends Controller
         //dd(auth() -> user());
     }
 
+    public function create(){
+
+        return view('posts.create');
+    }
+
 
 }
