@@ -20,8 +20,8 @@
                 </h1>
 
                 @auth
-                    <nav class="flex gap-6">
-                        <a class="font-bold text-gray-600 text-sm" href="#">
+                    <nav class="flex gap-7">
+                        <a class="font-bold text-gray-800 text-md" href="#">
                             Hola: 
                             <span class="font-normal">
                                 {{auth()->user()->username}}

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +12,12 @@ class PostController extends Controller
         $this -> middleware('auth');
     }
     
-    public function index(){
+    public function index(User $user){
 
-        return view('dashboard');
+        return view('dashboard',[
+
+            'user'=> $user
+        ]);
 
         //dd(auth() -> user());
     }
