@@ -4,6 +4,7 @@
         @vite('resources/css/app.css')
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <title>KamIvan - @yield('titulo')</title>
         <script src="{{ asset('js/app.js') }}" defer></script>   
