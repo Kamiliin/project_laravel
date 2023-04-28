@@ -110,6 +110,11 @@ return [
 
     'faker_locale' => 'en_US',
 
+    'aliases' => [
+        // ...
+        'Factory' => Illuminate\Database\Eloquent\Factories\Factory::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
