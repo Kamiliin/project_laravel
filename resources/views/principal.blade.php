@@ -9,27 +9,32 @@
 
 @section('contenido')
 
-{{$data}}
+<link rel="stylesheet" href="{{asset('css/api-football.css')}}">
 
-<div id="wg-api-football-games"
-data-host="v3.football.api-sports.io"
-data-key="cb9ece6001msh72d11bc3240d6eep1f8b43jsn3cd81da2feeb"
-data-date=""
-data-league=""
-data-season=""
-data-theme=""
-data-refresh="15"
-data-show-toolbar="true"
-data-show-errors="false"
-data-show-logos="true"
-data-modal-game="true"
-data-modal-standings="true"
-data-modal-show-logos="true">
-</div>
-<script
-type="module"
-src="https://widgets.api-sports.io/2.0.3/widgets.js">
-</script>
+
+<h1>ligas</h1>
+
+
+
+@foreach ($data as $league)
+    <li>{{ $league['name'] }}</li>
+@endforeach
+
+
+@foreach ($data as $league)
+    <div class="card">
+        <div class="card-header">
+            {{ $league['name'] }}
+        </div>
+        <div class="card-body">
+            <p>Country: {{ $league['country'] }}</p>
+            <p>Season: {{ $league['season'] }}</p>
+            
+           
+        </div>
+    </div>
+@endforeach
+
 
 
 @endsection
