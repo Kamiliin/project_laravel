@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\FootballController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -8,9 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', [ApiController::class, 'show']);
-
+Route::get('/encuentros', [FootballController::class, 'getUpcomingMatches']);
+Route::get('/principal', [FootballController::class, 'getChileanClubs']);
 Route::get('/register',[RegisterController::class,'index']) ->name('register');
 Route::post('/register',[RegisterController::class,'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
