@@ -8,8 +8,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/encuentros', [FootballController::class, 'getUpcomingMatches']);
-Route::get('/principal', [FootballController::class, 'getChileanClubs']);
+
+
+Route::get('/encuentros', [FootballController::class, 'getUpcomingMatches'])->name('encuentros');
+Route::get('/principal', [FootballController::class, 'getChileanClubs'])->name('principal');
+Route::get('/actualizar', [FootballController::class, 'updateDataFromAPI']);
+Route::get('/estadios', [FootballController::class, 'getStadium'])->name('estadios');
+
 Route::get('/register',[RegisterController::class,'index']) ->name('register');
 Route::post('/register',[RegisterController::class,'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');

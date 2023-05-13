@@ -3,39 +3,44 @@
 
  @section('titulo')
  
+ Posiciones
  @endsection
   
  @section('contenido')
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
  <div class="container mt-5">
-        <h1>Tabla de Posiciones Liga Chilena 2023</h1>
-        <table class="table table-striped">
-            <thead>
+    <h1>Tabla de Posiciones Liga Chilena 2023</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Club</th>
+                <th>Escudo</th>
+                <th>Puntos</th>
+                <th>Diferencia de Goles</th>
+                <th>Partidos Jugados</th>
+                <th>Partidos Ganados</th>
+                <th>Partidos Empatados</th>
+                <th>Partidos Perdidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($clubs as $club)
                 <tr>
-                    <th>Posición</th>
-                    <th>Club</th>
-                    <th>Puntos</th>
-                    <th>Partidos Jugados</th>
-                    <th>Partidos Ganados</th>
-                    <th>Partidos Empatados</th>
-                    <th>Partidos Perdidos</th>
+                    <td>{{ $club->rank }}</td>
+                    <td>{{ $club->name }}</td>
+                    <td><img src="{{ $club->logo }}" alt="Logo" width="50" height="50"></td>
+                    <td>{{ $club->points }}</td>
+                    <td>{{ $club->goals_diff }}</td>
+                    <td>{{ $club->played }}</td>
+                    <td>{{ $club->win }}</td>
+                    <td>{{ $club->draw }}</td>
+                    <td>{{ $club->lose }}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($data['response'][0]['league']['standings'][0] as $position)
-                    <tr>
-                        <td>{{ $position['rank'] }}</td>
-                        <td>{{ $position['team']['name'] }}</td>
-                        <td>{{ $position['points'] }}</td>
-                        <td>{{ $position['all']['played'] }}</td>
-                        <td>{{ $position['all']['win'] }}</td>
-                        <td>{{ $position['all']['draw'] }}</td>
-                        <td>{{ $position['all']['lose'] }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 @endsection

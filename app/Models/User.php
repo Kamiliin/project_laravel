@@ -42,4 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function isAdmin()
+    {
+        return $this->is_admin; // Asume que tienes una columna 'is_admin' en la tabla 'users' (tipo booleano)
+    }
 }
+
+
+
